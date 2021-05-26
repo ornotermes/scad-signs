@@ -58,22 +58,23 @@ module modOutline() {
 }
 
 //Part: Text
-%color(colorText) linear_extrude(height=depthText) modText();
+color(colorText) linear_extrude(height=depthText) modText();
 
 //Part: Outline
-%color(colorOutline) union() {
-    linear_extrude(height=depthText) difference() {
-        offset(r=sizeOutline)modText();
-        modText();
-    }
-    translate([0,0,depthText], true) linear_extrude(height=depthTop) square([sizeFrameV, sizeFrameH], true);
+%color(colorOutline) linear_extrude(height=depthText) difference() {
+    offset(r=sizeOutline)modText();
+    modText();
 }
 
-//Part: Base frame
-color(colorFrame) linear_extrude(height=depthText) difference(){
+
+//Part: Base plate
+%color(colorBase) linear_extrude(height=depthText) difference(){
     square([sizeFrameV, sizeFrameH], true);
     union(){
         modText();
         modOutline();
     }
 }
+
+//Part: Top coat
+%color(colorTop) translate([0,0,depthText]) linear_extrude(height=depthTop) square([sizeFrameV, sizeFrameH], true);
