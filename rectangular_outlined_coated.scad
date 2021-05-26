@@ -29,40 +29,20 @@ sizeFrameV=80;
 sizeFrameH=40;
 
 depthText=1.6;
-depthTop=0.2;
+depthTop=0.15; 
 
-colorFrame="#333F";
+/* Colors in Hex #RRGGBB / #RRGGBBAA / #RGB / #RGBA */
+
+//Color of the text
 colorText="#F00F";
+//Color of the outline around text
 colorOutline="#7773";
+//Color of base plate outside outline
+colorBase="#333F";
+//Color of topcoat
+colorTop="#7773";
 
-
-use <fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf>
-use <fonts/Bad_Script/BadScript-Regular.ttf>
-use <fonts/Charmonman/Charmonman-Regular.ttf>
-use <fonts/Charmonman/Charmonman-Bold.ttf>
-use <fonts/Nova_Mono/NovaMono-Regular.ttf>
-use <fonts/Cutive_Mono/CutiveMono-Regular.ttf>
-use <fonts/Press_Start_2P/PressStart2P-Regular.ttf>
-use <fonts/Audiowide/Audiowide-Regular.ttf>
-use <fonts/Gugi/Gugi-Regular.ttf>
-use <fonts/UnifrakturMaguntia/UnifrakturMaguntia-Regular.ttf>
-use <fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf>
-
-fontList=[
-    "Comfortaa:style=Light",
-    "Comfortaa:style=Regular",
-    "Comfortaa:style=Bold",
-    "Bad Script:style=Regular",
-    "Charmonman:style=Regular",
-    "Charmonman:style=Bold",
-    "Nova Mono:display=Regular",
-    "Cutive Mono:display=Regular",
-    "Press Start 2P:display=Regular",
-    "Audiowide:display=Regular",
-    "Gugi:display=Regular",
-    "Unifraktur Maguntia:display=Regular",
-    "Alfa Slab One:display=Regular",
-];
+include <fonts.scad>
 
 module modText() {
     text(strText, 
