@@ -43,19 +43,7 @@ colorBase="#333F";
 colorTop="#7773";
 
 include <fonts.scad>
-
-module modText() {
-    text(strText, 
-        font = fontList[fontSel], 
-        valign="center",
-        halign="center",
-        size=sizeText
-    );
-}
-
-module modOutline() {
-    offset(r=sizeOutline)modText();
-}
+include <modules.scad>
 
 //Part: Text
 color(colorText) linear_extrude(height=depthText) modText();
