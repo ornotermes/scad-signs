@@ -62,7 +62,7 @@ color(colorText) linear_extrude(height=depthText) modText();
 
 //Part: Outline
 %color(colorOutline) linear_extrude(height=depthText) difference() {
-    offset(r=sizeOutline)modText();
+    modOutline();
     modText();
 }
 
